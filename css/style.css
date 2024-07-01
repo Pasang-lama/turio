@@ -11,6 +11,9 @@
   --general-fonts: "Montserrat", sans-serif;
 }
 
+body {
+  background-color: #dedede;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -23,6 +26,10 @@ a {
   font-family: var(--heading-font);
   font-size: 18px;
   font-weight: 600;
+  display: inline-block;
+}
+.round-btn {
+  border-radius: 30px;
 }
 .custom-btn:hover {
   color: var(--secondary-color);
@@ -30,13 +37,41 @@ a {
   border: 1px solid var(--secondary-color);
 }
 
-ul{
+.center-btn {
+  margin: 40px auto 0px;
+  display: block;
+  width: fit-content;
+}
+
+ul {
   list-style: none;
 }
 
+.margin-top {
+  margin-top: 100px !important;
+}
+.container {
+  width: 1260px;
+  margin: 0px auto;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.section-heading .heading-wrapper {
+  width: 60%;
+}
+.heading-wrapper .section-title {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 /* header css  */
 header {
-  background-color: #393C41;
+  background-color: #393c41;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -53,41 +88,41 @@ header nav a {
   font-size: 16px;
   font-weight: 500;
 }
-header nav ul li{
+header nav ul li {
   display: inline-block;
   position: relative;
 }
-header nav ul li:hover{
-color: var(--secondary-color);
+header nav ul li:hover {
+  color: var(--secondary-color);
 }
-header ul li a i{
+header ul li a i {
   /* margin-left: 5px; */
   padding-left: 5px;
   color: var(--secondary-color);
 }
-header ul li ul{
-  background-color: #393C41;
+header ul li ul {
+  background-color: #393c41;
   position: absolute;
-  top:  100%;
+  top: 100%;
   left: 0px;
   width: 100%;
   padding-top: 20px;
   display: none;
 }
-header ul li ul li{
-  padding:  10px;
+header ul li ul li {
+  padding: 10px;
   width: 100%;
 }
-header ul li:hover ul{
+header ul li:hover ul {
   display: block;
   color: white;
 }
-header ul li ul li a{
+header ul li ul li a {
   white-space: nowrap;
 }
-header ul li ul li:hover{
-color: white;
-background-color: var(--secondary-color);
+header ul li ul li:hover {
+  color: white;
+  background-color: var(--secondary-color);
 }
 header .contact-info {
   display: flex;
@@ -120,6 +155,15 @@ header .contact-info button:hover {
   height: 90vh;
   position: relative;
 }
+.banner-slider .banner-item::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: #2d373cbf;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
 .banner-slider .banner-item img {
   height: 100%;
   width: 100%;
@@ -133,40 +177,224 @@ header .contact-info button:hover {
   transform: translate(-50%, -50%);
   color: white;
 }
-.banner-content span{
+.banner-content span {
   font-family: var(--general-fonts);
   font-size: 20px;
   font-weight: 600;
 }
-.banner-content .banner-heading{
+.banner-content .banner-heading {
   font-family: var(--heading-font);
   font-size: 56px;
   font-weight: 800;
   margin-bottom: 20px;
 }
-.banner-content p{
+.banner-content p {
   font-size: 16px;
   font-family: var(--general-fonts);
   font-weight: 400;
   margin-bottom: 20px;
 }
-.banner-slider .owl-nav{
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-right: 50px;
-display: flex;
-flex-direction: column;
-gap: 20px;
+.banner-slider .owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.banner-slider .owl-nav button{
+.banner-slider .owl-nav button {
   height: 40px;
   width: 40px;
   border: 1px solid white !important;
   border-radius: 50%;
   color: white !important;
 }
-.banner-slider .owl-nav button:hover{
-background-color: var(--secondary-color) !important;
-border: none !important;
+.banner-slider .owl-nav button:hover {
+  background-color: var(--secondary-color) !important;
+  border: none !important;
+}
+.packages-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.packages-card {
+  width: 400px;
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
+}
+.packages-card img {
+  height: 100%;
+  width: 100%;
+}
+.packages-card .packages-details {
+  padding: 10px;
+  position: relative;
+}
+.packages-card .packages-details .duration {
+  position: absolute;
+  top: -23px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #54a15d;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: white;
+  box-shadow: 0px 0px 10px gray;
+}
+.packages-card .packages-price-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.packages-card .book-now-btn {
+  padding: 10px 20px;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+.packages-card .book-now-btn i {
+  margin-left: 10px;
+  transition: 0.5s;
+}
+.packages-card .book-now-btn:hover i {
+  transform: translateX(10px);
+}
+.packages-card .packages-title {
+  margin-bottom: 10px;
+}
+.packages-card .actual-price {
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.top-destination .heading-wrapper {
+  text-align: center;
+}
+.destination-wrapper {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 20px;
+}
+
+.destination-card {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.destination-card:first-child {
+  grid-column: 1/ 3;
+}
+.destination-card:last-child {
+  grid-column: 3/5;
+}
+.destination-card::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.169);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.destination-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+.destination-card:hover .details {
+  transform: translateY(-40px);
+}
+.destination-card:hover img {
+  transform: scale(1.3);
+}
+.destination-card .details {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  transform: translateY(10px);
+  color: white;
+  transition: 0.4s;
+  z-index: 999;
+}
+.destination-card .details h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.destination-card .details .count {
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  width: fit-content;
+}
+.destination-card .details .count::after {
+  content: "";
+  height: 2px;
+  width: 0%;
+  background-color: red;
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  transition: 0.4s;
+}
+.destination-card .details .count:hover::after {
+  width: 100%;
+}
+.best-tour {
+  background-image: url("../images/upcoming-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 50px 0px;
+  position: relative;
+}
+.best-tour::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #2d373c55;
+}
+
+.best-tour .container {
+  position: relative;
+  z-index: 2;
+}
+
+.best-selling-tour-slider{
+  margin-top: 30px;
+}
+
+.best-selling-tour-slider .owl-nav {
+  position: absolute;
+  top: 0%;
+  right: 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  transform: translateY(-60px);
+}
+.best-selling-tour-slider .owl-nav button {
+  height: 40px;
+  width: 40px;
+  border: 1px solid white !important;
+  border-radius: 50%;
+  color: white !important;
+}
+.best-selling-tour-slider .owl-nav button:hover {
+  background-color: var(--secondary-color) !important;
+  border: none !important;
 }
