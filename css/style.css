@@ -52,6 +52,7 @@ ul {
 }
 .container {
   width: 1260px;
+  padding: 0px 10px;
   margin: 0px auto;
 }
 .section-heading {
@@ -238,12 +239,11 @@ transform: rotate(180deg);
   border: none !important;
 }
 .packages-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 .packages-card {
-  width: 400px;
   border-radius: 10px;
   background-color: white;
   overflow: hidden;
